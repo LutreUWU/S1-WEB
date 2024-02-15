@@ -1,0 +1,114 @@
+/* CSS CODE PAR DAVID */ 
+.Information{
+  width: 80%;
+  margin: auto;
+  height: auto;
+  margin-top: 1%;
+  border-radius: 15px;
+  font-size: 1em;
+}
+
+.Information h1{
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-size: 3em;
+  color: #63decc;
+  text-shadow: rgb(0, 0, 0) 0px 0 10px;
+  animation: neon 1s infinite alternate, pan-overlay 10s infinite linear;
+}
+
+.TPDiv,
+.InformationDiv{
+  width: 100%;
+  height: 100%;
+  gap: 2%;
+  display: inline-block;
+  border: 2px solid grey;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 0 1% 1% 1%;
+  color: white;
+}
+
+.TPDiv a{
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.TPDiv a:hover{
+  text-decoration: underline;
+  color: #63decc;
+}
+
+.profilTitle{
+  font-size: 2.5em;
+  height: calc(100vh * 0.07);  
+  display: flex;
+  align-items: center;
+  gap: 1%;
+  margin:0;
+  color: #63decc;
+
+  text-align: start;
+  animation: neon 1s infinite alternate, pan-overlay 10s infinite ease-in-out;
+  text-decoration: underline;
+}
+
+.TPContent,
+.InformationContent{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh * 0.15);
+}
+
+.Image{
+  height: 80%;
+  border: 3px #63decc solid;
+  border-radius: 15px;
+  
+}
+.TPContent ol li,
+.InformationContent ol li{
+  font-size: 1.5em;
+  margin: 3% 0;
+}
+
+.mediaDiv{
+  width: 20%;
+  height: 120%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.mediaDiv div{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  gap: 1%;
+  align-items: center;
+  justify-content: end;
+  font-size: 1.4em;
+}
+
+.mediaLogo{
+  height: 100%;
+}
+
+@media (max-width: 1150px) { 
+  .Information{
+    font-size: 0.8em;
+  }
+
+}
+
+@media (max-width: 750px) { 
+  .Information{
+    font-size: 0.6em;
+  }
+
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+   <meta charset="UTF-8">
+   <title>Compte-rendu de TP2</title>
+   <style>
+    body{
+        font-family: sans-serif;
+        background-color: whitesmoke;
+    }
+    .centered{
+        /* On peut utiliser, text-align: center; */
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column; /*Car on a 2 balises*/
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #03224C;
+        transform: skewX(10deg);
+        text-decoration: underline;
+    }
+
+    
+    h1{
+        font-size: 24px;
+    }
+
+    h2{
+        font-size: 18px;
+        color: #03224C;
+        text-decoration: underline;
+
+    }
+    h3{
+        font-size: 16px;
+    }
+
+    .right{
+        /* On peut utiliser, text-align: right; ou float:right*/
+        display: flex;
+        justify-content: end;
+    }
+
+    a{
+        color: red;
+        transition: 0.3s all;
+    }
+    a:hover{
+        color: teal;
+    }
+   </style>
+
+
+  </head>
+  <body style="margin-bottom: 1%">
+   <section>
+    <div class="centered">
+        <h1 style="transform: skewX(-10deg);">Compte-rendu de TP2</h1>
+        <p style="transform: skewX(-10deg);">Arnaud de Mesmay</p>
+    </div>
+    <div class="right">LIV David</div>
+   </section>
+   <section>
+    <h2>Exercice 1&nbsp;: Document de base, le retour&nbsp;!</h2>
+        <ol>
+            <li>Copier la structure ...</li>
+            <li>Les tags HTML commencent par une balise ouvrante &lt;foo&gt; et finissent par une balise fermante &lt;/foo&gt;.</li>
+            <li>Pour mettre un texte en gras on utilise la balise &lt;b&gt;, pour mettre en italique on utilise la balise &lt;i&gt;</li>
+            <li>On utilise les 2 balises en même temps &lt;b&gt;&lt;i&gt;text&lt;/i&gt;&lt;/b&gt; va donner <b><i>text</i></b>
+            <li>On utilise la balise &lt;ol&gt; suivi de la balise &lt;li&gt; à l'intérieur</li>
+            <li>On écrit "Compte-rendu de TP 2" en en-tête Pour l'avoir en titre de fenêtre
+                <span style="display: inline-block;">On l'écrit aussi dans le corps du document pour savoir à l'utilisateur qu'on fait le TP 2</span>
+            </li>
+            <li><div><a href="https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/td02.html"><b><i>Cours de programmation web </i></b></a></li>
+            <li>Mon superbe arbre !<div class="banner-animation"><img class="img" src="arbre.jpg" alt="Arbre qui représente ses tags"></div></li>
+        </ol>
+        <style>
+            /* BONUS */
+            .banner-animation{
+                position: relative;
+                margin: auto;
+                width: 50%;
+                height: 50%;
+                border: 4px inset rgb(130, 130, 182);
+                border-radius: 15px;
+                transform: rotate(-90deg);
+                overflow: hidden;
+            }
+
+            .banner-animation::before{
+                content: "";
+                position: absolute;
+                background: linear-gradient(
+                    #0b5991,
+                    #0b5991 3px,
+                    transparent 3px,
+                    transparent 10px
+                );
+                border-radius: 20px;
+                background-size:  100% 10px;
+                width: 100%;
+                height: 100%;
+                animation: pan-overlay 30s infinite linear;
+                opacity: 0.1;
+            }
+            
+            @keyframes pan-overlay {
+  
+            from {
+                background-position: 0% 0%
+            }
+            
+            to {
+                background-position: 0% 100%;
+                
+            }
+            }
+
+            .img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        </style>
+    </section>
+    <section>
+        <h2>Exercice 2: les listes et les tables</h2>
+            <ol>
+                <li>
+                    <ol>
+                        <li>maths</li>
+                        <li>physique</li>
+                        <li>français</li>
+                    </ol>
+                </li>
+                <li>
+                    <ul style="list-style-type: circle;">
+                    <li>maths</li>
+                    <li>physique</li>
+                    <li>français</li>
+                    </ul>
+                </li>
+                <li>
+                    <table>
+                        <thead>
+                            <tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th>1</th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+                            <tr><th>2</th><td>2</td><td>4</td><td>6</td><td>8</td></tr>
+                            <tr><th>3</th><td>3</td><td>6</td><td>9</td><td>12</td></tr>
+                            <tr><th>4</th><td>4</td><td>8</td><td>12</td><td>16</td></tr>
+                        </tbody>
+                    </table>
+                    <style>
+                        th{
+                            text-align: center;
+                            border: 2px solid lightblue;
+                            width: 20px;  
+                        }
+                        
+                        td{
+                            text-align: center;
+                            margin: 1%;
+                            width: 20px;  
+                            border: 2px solid lightcoral;
+                        }
+                    </style>
+                </li>
+                <li>Voir la 3.</li>
+                <li>
+                    <table>
+                        <thead>
+                            <tr><th></th><th colspan=2>1</th><th>3</th><th>4</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th rowspan=2>1</th><td>1</td><td>1</td><td>3</td><td>4</td></tr>
+                            <tr><td>1</td><td>1</td><td>3</td><td>4</td></tr>
+                            <tr><th>3</th><td>3</td><td>3</td><td>9</td><td>12</td></tr>
+                            <tr><th>4</th><td>4</td><td>4</td><td>12</td><td>16</td></tr>
+                        </tbody>
+                    </table>
+                    J'ai utilisé Google et j'ai tapé tout simplement "Faire une case faisant 2 colonnes html", j'ai trouvé colspan, puis j'ai déduis rowspan
+                </li>
+
+            </ol>
+
+    </section>
+    <section>
+        <h2 style="color: Orange;">Exercice 3: les listes et les tables</h2>
+        <ol>
+            <li>Pour résoudre à cette question, on utilise le CSS et on cible h2{color:orange}  </li>
+            <li>Pour résoudre à cette question, on utilise le CSS et on cible body{font-family:sans-serif} </li>
+            <li>Pour résoudre à cette question, on utilise le CSS et on cible les balises h1, h2 et h3, et on leur attribue la taille qu'on veut</li>
+            <li>Pour résoudre à cette question, on utilise le CSS on cible directement la balise h2 &lt;h2 style="color: Orange;"&gt;</li>
+            <li>Pour résoudre à cette question, on pourrait utiliser <b>text-align:center</b>, mais on peut aussi utiliser display:flex, suivi de <b>justify-content:center</b> et <b>align-items:center</b></li>
+            <li>Pour résoudre à cette question, on fait comme la 5, mais au lieu de mettre center, on utilise <b>right</b></li>
+            <li>Pour résoudre à cette question, on utilise <b>:hover</b> en ciblant les liens, donc <b>a:hover</b></li>
+
+        </ol>
+    </section>
+</body>
+</html>

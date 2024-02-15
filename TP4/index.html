@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td04/exo1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Mon tout premier script</title>
+  <script>
+   "use strict";
+   //console.log("hello");
+
+   // Question 2 
+   /*for (let number = 0; number <= 2024 ; number++) {
+    console.log(number);
+   }*/
+   
+   // Question 3
+   /*
+    - The description begins here.
+    - More description continues here.
+   */
+   
+   /*for (let number = 0; number <= 2023 ; number++) {
+    if (number % 2 == 0 || number % 3 == 0){
+        console.log(number)
+    }
+   }*/
+
+   // Question 4
+   function pair_and_divideBy3(number){
+    for (let i = 0; i <= number ; i++) {
+        if (i % 2 == 0 || i % 3 == 0){
+            console.log(i)
+        }
+       }
+   }
+   pair_and_divideBy3(10)
+  </script>
+ </head>
+ 
+ 
+ 
+ 
+ <body>
+  <h2>Premier pas en JavaScript</h2>
+  <section>
+    <h3>Exercice 1 : Hello World</h3>
+    <ol>
+        <li>Pour ouvrir la console sur Firefox : Cmd + Option + K (sur Mac) ou Ctrl + Maj + I (sous Windows).</li>
+        Pour ouvrir la console sur Chrome : f12 ou clique droit -> Inspecter ou ou Ctrl + Maj + I (sous Windows).
+        <li>Voir code</li>
+        <li>Voir code</li>
+        <li>pair_and_divideBy3(7) : 0 2 3 4 6</li>
+        <p>pair_and_divideBy3(10) : 0 2 3 4 6 8 9 10</p>
+        <p></p>Si on test la fonction avec -1, rien ne se passe car la fonction i <= number est déja appliqué dès le début</p>
+    </ol>
+  </section>
+  <section>
+    <h3>Exercice 2 : Damier</h3>
+    <ol>
+        <li>De défaut, on a plusieurs choses illogique dans la programmation (pas d'erreur si une variable n'est pas déclarée, 010 = 10, on peut supprimet une déclaration avec delete ...), le mode strict permet d'éviter cela</li>
+        <li>Pour ajouter un enfant ou une classe à un élément, on doit cibler l'élément à partir de son ID, avec la commande document.getElementById(<i>ID de l'élément</i>)</li>
+        <p>Une fois qu'on a récupéré l'élément dans une constante, pour ajouter une div on utilise la commande document.createElement("div"), puis on l'append à l'élément</p>
+        <p>Pareil pour ajouter une classe mais cette-fois ci on utilise la commande classList.add(<i>Nom de la classe</i>)</p>
+        <p>La fonction makeCell, regroupe ce qui a été expliqué au-dessus, on récupère l'élement dans une constante grâce à son id, puis on lui crée une ligne avec document.createElement("row"), puis une cellule avec document.createElement("td").</p>
+        On ajoute la cellule dands la ligne et on ajoute la ligne au tableau 
+        <li>Voir code</li>
+
+    </ol>
+  </section>
+</body></html>

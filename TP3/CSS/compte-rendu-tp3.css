@@ -1,0 +1,76 @@
+body{
+    font-family: sans-serif;
+    background-color: whitesmoke;
+}
+.centered{
+    /* On peut utiliser, text-align: center; */
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /*Car on a 2 balises*/
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #03224C;
+    transform: skewX(10deg);
+    text-decoration: underline;
+}
+
+
+h1{
+    font-size: 24px;
+}
+
+h2{
+    font-size: 18px;
+    color: #03224C;
+    text-decoration: underline;
+
+}
+h3{
+    font-size: 16px;
+}
+
+.right{
+    /* On peut utiliser, text-align: right; ou float:right*/
+    display: flex;
+    justify-content: end;
+}
+
+a{
+    color: red;
+    transition: 0.3s all;
+}
+a:hover{
+    color: teal;
+}
+
+table{
+    width: 100%;
+    border: 1px solid black;
+    padding: 1%;
+}
+
+tr{
+    text-align: center;
+}
+
+thead tr td{
+    font-weight: bold;
+}
+
+tbody tr td{
+    font-variant: small-caps;
+}
+
+.TitleMovie{
+    float: left;
+}
+
+.TitleMovie:hover{
+    color: #1c780c;
+    cursor: pointer;
+}
+
+tbody tr:nth-child(even){
+    color:blue
+}

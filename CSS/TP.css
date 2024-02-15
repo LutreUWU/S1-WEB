@@ -1,0 +1,65 @@
+.Retour{
+    position: absolute;
+    font-size: 2em;
+    margin: 1%;
+    z-index: 1;
+}
+
+.Retour a{
+    color: #63decc;
+    transition: all 0.3s ease-in-out;
+}
+
+.Retour:hover{
+    font-size: 2.1em;
+    cursor: pointer;
+}
+
+.TP_Div{
+    margin-top: 2%;
+    color: white;
+    padding: 1% 1% 0% 1% ;
+    border-top: solid 4px #161719;
+}
+
+.TP_Div h1{
+    font-size: 2.5em ;
+    text-decoration: underline;
+    color: #63decc;
+}
+
+.TP_Div h4{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1em;
+    color:lightblue;
+}
+
+.TP_Div h3{
+    font-family: "Chakra Petch", sans-serif;
+    margin: 3px;
+}
+
+.TP_Div a{
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+.TP_Div a:hover{
+    text-decoration: underline;
+    color: rgb(46, 136, 219);
+    cursor: pointer;
+}
+
+.TP_Div ol li h2{
+    margin: 5px 0;
+    font-size: 1.3em;
+}
+
+.TP_Div section h2{
+    margin: 1% 0;
+    color: rgb(0, 162, 255);
+    font-size: 1.8em;
+    text-decoration: underline;
+}
+

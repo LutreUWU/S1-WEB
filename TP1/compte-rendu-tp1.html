@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- CORRIGER SUR W3C VALIDATOR MAISON -->
+<html>
+  <head>
+    <title>Compte-rendu de TP1</title>
+  </head>
+  <body style="margin-left:1%">
+    <h1>Compte-rendu de TP1</h1>
+    <p>
+      LIV David
+    </p>
+    <h2>Exercice 0 : On sort un papier et un crayon</h2>
+    <p>
+      Voilà, c'est fait !
+    </p>
+<!-- Exercice 1-->
+    <h2>Exercice 1 : On commence tranquillement !</h2>
+	<ol>
+    	<li>mkdir Prog Web    </li>
+     	<li>cd Prog\ Web, mkdir tp1</li>
+     	<li>cd tp 1, gedit compte-rendu-tp1.html &</li>
+     	</ol>
+<!-- Exercice 2-->
+    <h2>Exercice 2&nbsp;: Document HTML de base</h2>
+    <p>Si le résultat ne s'affichait pas correctement (L'accent du à), il faut rajouter "meta 		charset="UTF-8" " à la balise head
+    <p>
+    <h3>À quoi servent les tags h1, h2 et h3 ?</h3>
+    <p>
+      Les balises h1, h2 ... h6 permettent de créer des titres de texte gras, plus le chiffre est petit, plus la taille du texte est grande. Elle à une marge et elle occupe la ligne (inline block
+    </p>
+    <h3>À quoi sert le tag p ?</h3>
+    <p>
+      Pour créer des paragraphes de texte, elle a les mêmes propriétés CSS que h1, sauf que cette fois-ci le texte n'est pas gras
+    </p>
+<!-- Exercice 3-->
+    <h2>Exercice 3: Uniform Resource Locator</h2>
+    <ol>
+    <li>Nom de la machine : www</li>
+    <p >Nom du domaine: w3.org</p>
+    <li> La 1er ligne correspond à l'IP de la machine qui héberge le site</li>
+    <p> La deuxième ligne correspond à une deuxième IP de secours dans le cas où la première ne marche plus</p>
+    <p> Le 3ème ligne est une adresse IP en format V6</p>
+    <li>On utilise des noms car ça facilite la saisie des adresses Webs (C'est plus simple à retenir)</li>
+    <li style="margin-top:2%"> traceroute envoie, depuis le pc où on a lancé la commande, des données au serveur de l'IP, et elle affiche le chemin qu'elle a prit pour arriver au serveur </li>
+    <p> Le nom du réseau de l'université est gwetud.u-pem.fr</p>
+    <p> A l'étape 4, 5, 6, 7 et 11, on passe par un autres réseau </p>
+    <li>IP monge.univ-mlv.fr: 193.55.61.150</li>
+    <li style="margin-top:2%">IP vincentjuge1987.github.io: 185.199.109.153</li>
+    <p>IP forax.github.io: 185.199.109.153</p>
+    <p>On observe que les adresses IP sont les même </p>
+    <p>Si on essage d'accéder à la page avec l'IP, le site est introuvable (Pour la sécurité ?)</p>
+    <!-- Dernière question 6-->
+    <li>On accède au cours de Vincent Juge,</li>
+    </ol>
+<!-- Exercice 4-->
+    <h2>Exercice 4: Service HTTP</h2>
+    <ol>
+	<li>Le port TCP est le 80</li> 
+    	<p>Le header nous indique que la requête est passé, et elle renvoie des valeurs supplémentaires tel que, la longueur du contenu, le type de contenu ... </p>
+    	<li>"HTTP" est le protocole, "1.1" est la version, "200 OK" est la réponse</li>
+    	<li style="margin-top:2%">Le nom du serveur est Apache</li>
+    	<li style="margin-top:2%">Content Type, définit le contenu du texte, image ... </li>
+    	<li style="margin-top:2%">Content Length: définit la taille du contenu</li>
+    	<li style="margin-top:2%">Il n'arrive pas à se connecter au serveur donc elle envoie 404 Not Found</li>
+    	<li style="margin-top:2%">Il arrive à se connecter à l'html, elle renvoie 302 Found car c'est un url temporaire, la valeur Location correspond à l'url dont on a essayé de faire la requête.</li> 
+    	<li style="margin-top:2%">wget essage de télécharger les ressources de l'url sauf que l'url n'existe pas dans les serveurs, si on l'avait fait avec google.fr, wget aurait marché. </li>
+    </ol>
+  </body>
+</html>
