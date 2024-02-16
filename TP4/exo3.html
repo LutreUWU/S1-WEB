@@ -13,6 +13,7 @@
     padding: 15px;
     border: 1px solid black;
    }
+   /* 
    tr:nth-child(odd) td:nth-child(odd){
     background-color: black;
    }
@@ -20,57 +21,152 @@
    tr:nth-child(even) td:nth-child(even){
     background-color: black;
    }
+   */
   </style>
   <script>
    "use strict";
-   window.onload = function() {
-     makeCell("table-1", "brown");
-     makeLine(5,"table-2");
-     makeSquare(8,"table-3", true);
-     makeSquare(3,"table-4", false);
-   };
-   
-   const makeCell = function(id, color) {
-     const table = document.getElementById(id);
-     const row = document.createElement("tr");
-     const cell = document.createElement("td");
-     cell.style.backgroundColor = color;  
-     row.appendChild(cell);
-     table.appendChild(row);
-   };
-   
-   const makeLine = function(width, id) {
-    const table = document.getElementById(id);
-    const row = document.createElement("tr");
-    for (let i = 0; i < width ; i++) {
-      const cell = document.createElement("td");
-      row.appendChild(cell);
-    }
-    table.appendChild(row);
+      const makeCell = function(id, color) {
+        const table = document.getElementById(id);
+        const row = document.createElement("tr");
+        const cell = document.createElement("td");
+        cell.style.backgroundColor = color;  
+        row.appendChild(cell);
+        table.appendChild(row);
+      };
 
-   };
-   
-   const makeSquare = function(size, id, booleen) {
-    const table = document.getElementById(id);
-    for (let i = 0; i < size ; i++) {
-      makeLine(size, id)
-    }   
-    if (booleen){
-      const allLine = table.querySelectorAll("tr")
-      for (let i = 0; i < allLine.length ; i++) {
-          var allCell = allLine[i].querySelectorAll("td")      
-          allCell[i].style.backgroundColor = "brown";  
+      const makeLine = function(width, id) {
+        const table = document.getElementById(id);
+        const row = document.createElement("tr");
+        for (let i = 0; i < width ; i++) {
+          const cell = document.createElement("td");
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+      };
+
+  // EXERCICE 2, Question 3 - 6 (Voir Fonction "makeCell" et "makeLine" au-dessus)
+    /* 
+      window.onload = function() {
+        makeCell("table-1", "brown");
+        makeLine(5,"table-2");
+        makeSquare(8,"table-3");
+        makeSquare(3,"table-4");
+      };
+      const makeSquare = function(size, id) {
+        const table = document.getElementById(id);
+        for (let i = 0; i < size ; i++) {
+          makeLine(size, id)
+        }; 
       }
-    }
-   };
-
-   function color(i,j){
+    */ 
     
-   }
+  // EXERCICE 2, Question 7 & 8
+    /* 
+      window.onload = function() {
+        makeSquare(8,"table-3", true);
+        makeSquare(3,"table-4", false);
+      };
+
+      const makeSquare = function(size, id, booleen) {
+        const table = document.getElementById(id);
+        for (let i = 0; i < size ; i++) {
+          makeLine(size, id)
+        };   
+        if(booleen){
+          const allLine = table.querySelectorAll("tr");
+          for (let i = 0; i < allLine.length ; i++) {
+            var allCell = allLine[i].querySelectorAll("td");      
+            allCell[i].style.backgroundColor = "brown";  
+          }
+        }
+      };
+    */
+    
+  // EXERCICE 3, Question 2
+    /* 
+      window.onload = function() {
+        makeCell("table-1", "brown");
+      }
+    */
+    
+  // EXERCICE 3, Question 3 & 4
+    /*
+      window.onload = function() {
+        makeSquare(8,"table-3", fcol);
+        makeSquare(3,"table-4", fcol);
+      };
+      
+      function fcol(i, j){
+        if (i % 2 == 0){ // Si c'est une ligne paire
+          if (j % 2 == 0){ // Si c'est une colonne paire
+            return "black";
+          }  
+          return "white";
+        }
+
+        if (i % 2 != 0){ // Si c'est une ligne impaire
+          if (j % 2 == 0){ // Si c'est une colonne paire
+            return "white";
+          }  
+          return "black";
+        }
+      }
+
+      const makeSquare = function(size, id, color) {
+        const table = document.getElementById(id);
+        for (let i = 0; i < size ; i++){
+          makeLine(size, id);
+        }
+        let allLine = table.querySelectorAll("tr");  
+        for (let i = 0; i < size ; i++) {
+          let allCell = allLine[i].querySelectorAll("td");
+          for (let j = 0; j < size ; j++) {
+            allCell[j].style.backgroundColor = color(i, j);  
+          }   
+        }
+      };
+    */
+  
+  // EXERCICE 3, Question 5
+    /*
+      window.onload = function() {
+        makeSquare(8,"table-3", diagonalColor(true));
+        makeSquare(3,"table-4", diagonalColor(false));
+      };
+
+      function diagonalColor(booleen){
+        if (booleen){
+          function fcol(i, j){
+            if (i == j){
+              return "brown";
+            }
+            else{
+              return "grey";
+            }
+          }
+          return fcol;
+        }
+      }
+
+      const makeSquare = function(size, id, color) {
+        const table = document.getElementById(id);
+        for (let i = 0; i < size ; i++) {
+          makeLine(size, id);
+        }
+        let allLine = table.querySelectorAll("tr");  
+        for (let i = 0; i < size ; i++) {
+          let allCell = allLine[i].querySelectorAll("td");
+          for (let j = 0; j < size ; j++) {
+            allCell[j].style.backgroundColor = color(i, j);  
+          }   
+        }
+      };
+    */
    </script>
  </head>
  <body>
   <h2>Damier</h2>
+  <h3>Les fonctions demandées sont en commentaire, il faut enlever ler "/* */" dans le fichier code en fonction de l'exercice que vous souhaitez voir</h3>
   <p>
     Carré de 1x1
   </p>
