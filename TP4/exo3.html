@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0087)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td04/exo2b.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <title>Mon super damier</title>
   <style>
@@ -26,6 +26,13 @@
   <script>
    "use strict";
       const makeCell = function(id, color) {
+        /** 
+          Cette fonction permet de créer une rangée avec 1 seule cellule dans l'id du tableau qu'on aura renseigné.
+          Elle prend un autre paramètre qui est la couleure de sa cellule.
+          Paramètre:
+          - id : ID de la balise tableau où on veut créer la cellule.
+          - color : Couleur de la cellule 
+        **/
         const table = document.getElementById(id);
         const row = document.createElement("tr");
         const cell = document.createElement("td");
@@ -35,6 +42,12 @@
       };
 
       const makeLine = function(width, id) {
+        /** 
+          Cette fonction permet de créer une rangée avec "width" cellules dans l'id du tableau qu'on aura renseigné.
+          Paramètre:
+            - width : Nombre de cellule qu'on veut dans la rangée. 
+            - id : ID de la balise tableau où on veut créer la cellule.
+        **/ 
         const table = document.getElementById(id);
         const row = document.createElement("tr");
         for (let i = 0; i < width ; i++) {
@@ -42,46 +55,8 @@
           row.appendChild(cell);
         }
         table.appendChild(row);
-      };
-
-  // EXERCICE 2, Question 3 - 6 (Voir Fonction "makeCell" et "makeLine" au-dessus)
-    /* 
-      window.onload = function() {
-        makeCell("table-1", "brown");
-        makeLine(5,"table-2");
-        makeSquare(8,"table-3");
-        makeSquare(3,"table-4");
-      };
-      const makeSquare = function(size, id) {
-        const table = document.getElementById(id);
-        for (let i = 0; i < size ; i++) {
-          makeLine(size, id)
-        }; 
-      }
-    */ 
-    
-  // EXERCICE 2, Question 7 & 8
-    /* 
-      window.onload = function() {
-        makeSquare(8,"table-3", true);
-        makeSquare(3,"table-4", false);
-      };
-
-      const makeSquare = function(size, id, booleen) {
-        const table = document.getElementById(id);
-        for (let i = 0; i < size ; i++) {
-          makeLine(size, id)
-        };   
-        if(booleen){
-          const allLine = table.querySelectorAll("tr");
-          for (let i = 0; i < allLine.length ; i++) {
-            var allCell = allLine[i].querySelectorAll("td");      
-            allCell[i].style.backgroundColor = "brown";  
-          }
-        }
-      };
-    */
-    
+      };   
+  
   // EXERCICE 3, Question 2
     /* 
       window.onload = function() {
@@ -96,7 +71,8 @@
         makeSquare(3,"table-4", fcol);
       };
       
-      function fcol(i, j){
+      const fcol = function(i, j){ 
+        // La fonction permet de créer un damier noir et blanc 
         if (i % 2 == 0){ // Si c'est une ligne paire
           if (j % 2 == 0){ // Si c'est une colonne paire
             return "black";
@@ -113,6 +89,7 @@
       }
 
       const makeSquare = function(size, id, color) {
+        // La fonction permet de créer un damier noir et blanc en appelant la fonction fcol
         const table = document.getElementById(id);
         for (let i = 0; i < size ; i++){
           makeLine(size, id);
@@ -134,21 +111,40 @@
         makeSquare(3,"table-4", diagonalColor(false));
       };
 
-      function diagonalColor(booleen){
+      const fcol = function(i, j){
+        // Même fonction fcol que la question précédente
+        if (i % 2 == 0){ // Si c'est une ligne paire
+          if (j % 2 == 0){ // Si c'est une colonne paire
+            return "black";
+          }  
+          return "white";
+        }
+
+        if (i % 2 != 0){ // Si c'est une ligne impaire
+          if (j % 2 == 0){ // Si c'est une colonne paire
+            return "white";
+          }  
+          return "black";
+        }
+      }
+
+      const diagonalColor = function(booleen){
+        // La fonction permet de changer la diagonale du jeu en marron
         if (booleen){
-          function fcol(i, j){
+          const fdiagonale = function(i, j){
+            // Pour cela on sait que c'est la diagonale quand la ligne est égale à la colonne 
             if (i == j){
               return "brown";
             }
             else{
-              return "grey";
+              return "white";
             }
-          }
-          return fcol;
+          };
+          return fdiagonale;
         }
-      }
+      };
 
-      const makeSquare = function(size, id, color) {
+      const makeSquare = function(size, id, diagonale) {
         const table = document.getElementById(id);
         for (let i = 0; i < size ; i++) {
           makeLine(size, id);
@@ -157,10 +153,15 @@
         for (let i = 0; i < size ; i++) {
           let allCell = allLine[i].querySelectorAll("td");
           for (let j = 0; j < size ; j++) {
-            allCell[j].style.backgroundColor = color(i, j);  
+            if(i == j){
+              allCell[j].style.backgroundColor = diagonale(i, j);  
+            }
+            else {
+              allCell[j].style.backgroundColor = fcol(i, j);  
+            }
           }   
         }
-      };
+      }; 
     */
    </script>
  </head>

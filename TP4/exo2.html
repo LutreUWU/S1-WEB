@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0087)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td04/exo2b.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <title>Mon super damier</title>
   <style>
@@ -13,6 +13,7 @@
     padding: 15px;
     border: 1px solid black;
    }
+   /*Question 6*/
    tr:nth-child(odd) td:nth-child(odd){
     background-color: black;
    }
@@ -29,16 +30,27 @@
      makeSquare(8,"table-3", true);
      makeSquare(3,"table-4", false);
    };
-   
-   const makeCell = function(id) {
+  // Question 2
+  const makeCell = function(id) {
+      /** 
+        Cette fonction permet de créer une rangée avec 1 seule cellule dans l'id du tableau qu'on aura renseigné.
+        Paramètre:
+          - id : ID de la balise tableau où on veut créer la cellule.
+      **/
      const table = document.getElementById(id);
      const row = document.createElement("tr");
      const cell = document.createElement("td");
      row.appendChild(cell);
      table.appendChild(row);
    };
-   
-   const makeLine = function(width, id) {
+  // Question 3
+  const makeLine = function(width, id) {
+    /** 
+      Cette fonction permet de créer une rangée avec "width" cellules dans l'id du tableau qu'on aura renseigné.
+      Paramètre:
+        - width : Nombre de cellule qu'on veut dans la rangée. 
+        - id : ID de la balise tableau où on veut créer la cellule.
+    **/
     const table = document.getElementById(id);
     const row = document.createElement("tr");
     for (let i = 0; i < width ; i++) {
@@ -46,14 +58,22 @@
       row.appendChild(cell);
     }
     table.appendChild(row);
-
    };
-   
-   const makeSquare = function(size, id, booleen) {
+  // Question 4 & 7 (Mettre le paramètre booleen en False pour voir la Question 4)
+  const makeSquare = function(size, id, booleen) {
+    /** 
+      Cette fonction permet de créer une grille de case "size"x"size", dans l'id du tableau qu'on aura renseigné.
+      On a aussi un paramètre booléen, s'il est True alors la diagonale de la grille sera de couleur marron
+      Paramètre:
+        - width : Nombre de cellule qu'on veut dans la rangée. 
+        - id : ID de la balise tableau où on veut créer la cellule.
+        - booleen : Booleen pour savoir si on veut une diagonale coloré ou pas 
+    **/
     const table = document.getElementById(id);
     for (let i = 0; i < size ; i++) {
       makeLine(size, id)
-    }   
+    }
+    //Question 7   
     if (booleen){
       const allLine = table.querySelectorAll("tr")
       for (let i = 0; i < allLine.length ; i++) {

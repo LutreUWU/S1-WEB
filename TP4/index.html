@@ -1,69 +1,119 @@
 <!DOCTYPE html>
 <!-- saved from url=(0086)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td04/exo1.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <title>Mon tout premier script</title>
-  <script>
-   "use strict";
-   //console.log("hello");
-
-   // Question 2 
-   /*for (let number = 0; number <= 2024 ; number++) {
-    console.log(number);
-   }*/
-   
-   // Question 3
-   /*
-    - The description begins here.
-    - More description continues here.
-   */
-   
-   /*for (let number = 0; number <= 2023 ; number++) {
-    if (number % 2 == 0 || number % 3 == 0){
-        console.log(number)
-    }
-   }*/
-
-   // Question 4
-   function pair_and_divideBy3(number){
-    for (let i = 0; i <= number ; i++) {
-        if (i % 2 == 0 || i % 3 == 0){
-            console.log(i)
-        }
-       }
-   }
-   pair_and_divideBy3(10)
-  </script>
- </head>
- 
- 
- 
- 
+  <link rel="stylesheet" href="./style.css">
+</head>
  <body>
   <h2>Premier pas en JavaScript</h2>
-  <section>
-    <h3>Exercice 1 : Hello World</h3>
-    <ol>
-        <li>Pour ouvrir la console sur Firefox : Cmd + Option + K (sur Mac) ou Ctrl + Maj + I (sous Windows).</li>
-        Pour ouvrir la console sur Chrome : f12 ou clique droit -> Inspecter ou ou Ctrl + Maj + I (sous Windows).
-        <li>Voir code</li>
-        <li>Voir code</li>
-        <li>pair_and_divideBy3(7) : 0 2 3 4 6</li>
-        <p>pair_and_divideBy3(10) : 0 2 3 4 6 8 9 10</p>
-        <p></p>Si on test la fonction avec -1, rien ne se passe car la fonction i <= number est déja appliqué dès le début</p>
-    </ol>
+    <section>
+      <h3>Exercice 1 : Hello World</h3>
+      <ol>
+        <li>
+          Il existe plusieurs méthodes pour ouvrir la console:
+          <ol>
+            <li>Pour ouvrir la console sur Firefox : Cmd + Option + K (sur Mac) ou Ctrl + Maj + I (sous Windows).</li>
+            <li>Pour ouvrir la console sur Chrome : F12 ou clique droit -> Inspecter, ou Ctrl + Maj + I (sous Windows).</li>
+          </ol>
+        </li>
+        <li>
+            Pour cette question, on a crée une boucle for qui va de 0 jusqu'à 2024 (inclus) en faisant des incrémentations de +1, puis à chaque incrémentations, on console.log la valeur. 
+        </li>
+        <li>
+            Pour cette question, on utilise la même boucle for de la question précédente, mais cette fois-ci on ajoute une condition, si le nombre est divisible par 2 ou 3, alors on va console.log la valeur.
+        </li>
+        <li>
+          Pour cette question, on crée la fonction avec comme paramètre le nombre, puis on utilise la même boucle que la question précédente en remplaçant la valeur 2023/2024 par le paramètre number.
+          <ol>
+            <li>pair_and_divideBy3(7) : 0 2 3 4 6</li>
+            <li>pair_and_divideBy3(10) : 0 2 3 4 6 8 9 10</li>
+          </ol>
+          Si on test la fonction avec -1, rien ne se passe car la fonction i &lt;= number est respecté dès le début.
+        </li>
+      </ol>
   </section>
   <section>
-    <h3>Exercice 2 : Damier</h3>
-    <ol>
-        <li>De défaut, on a plusieurs choses illogique dans la programmation (pas d'erreur si une variable n'est pas déclarée, 010 = 10, on peut supprimet une déclaration avec delete ...), le mode strict permet d'éviter cela</li>
-        <li>Pour ajouter un enfant ou une classe à un élément, on doit cibler l'élément à partir de son ID, avec la commande document.getElementById(<i>ID de l'élément</i>)</li>
-        <p>Une fois qu'on a récupéré l'élément dans une constante, pour ajouter une div on utilise la commande document.createElement("div"), puis on l'append à l'élément</p>
-        <p>Pareil pour ajouter une classe mais cette-fois ci on utilise la commande classList.add(<i>Nom de la classe</i>)</p>
-        <p>La fonction makeCell, regroupe ce qui a été expliqué au-dessus, on récupère l'élement dans une constante grâce à son id, puis on lui crée une ligne avec document.createElement("row"), puis une cellule avec document.createElement("td").</p>
-        On ajoute la cellule dands la ligne et on ajoute la ligne au tableau 
-        <li>Voir code</li>
-
-    </ol>
+      <h3>Exercice 2 : Damier</h3>
+      <ol>
+        <li>
+          Par défaut, on a plusieurs choses illogique dans la programmation (pas d'erreur si une variable n'est pas déclarée, 010 = 10, on peut supprimet une déclaration avec delete ...), le mode strict permet d'éviter cela.
+        </li>
+        <li>
+          Pour ajouter un enfant ou une classe à un élément, on doit cibler l'élément à partir de son ID, avec la commande document.getElementById(<i>ID de l'élément</i>):
+          <ol>
+            <li>Une fois qu'on a récupéré l'élément dans une constante, pour ajouter une div on utilise la commande document.createElement("div"), puis on l'append à l'élément.</li>
+            <li>Pareil pour ajouter une classe mais cette-fois ci on utilise la commande classList.add(<i>Nom de la classe</i>).</li>
+            <li>
+              La fonction makeCell, regroupe ce qui a été expliqué au-dessus, on récupère l'élement dans une constante grâce à son id, puis on lui crée une ligne avec document.createElement("row") puis une cellule avec document.createElement("td").
+              On ajoute la cellule dans la ligne et on ajoute la ligne au tableau.
+            </li>
+          </ol>
+        </li>
+        <li>
+          Pour cette question, si on utilise la fonction makeCell, on va avoir 5 rangée de 1 case, et nous on veut 1 rangée de 5 cases, Pour ce faire on va quasiment recopier la fonction makeCell à quelques détails près:
+          <ol>
+            <li>On va appliquer la boucle for, seulement pour la création de la cellule, puis on va l'append dans la row.</li>
+          </ol>
+          De ce fait on pourra obtenir une rangée de 5 cases, lorsqu'on appelera la fonction makeLine(5,"table-2").
+        </li>
+        <li>Pour cette question, on fait une boucle for qui va appeler <i>i</i> fois (Nombre qu'on aura mis en paramètre), la fonction makeLine.</li>
+        <li>La fonction crée à la question précédente répons à la question demandé.</li>
+        <li>
+          Pour cette question, on a remarqué dans pour toutes les rangées paires, les colonnes paires étaient noire. Tandis que pour toutes les rangées impaires, les colonnes impaires étaient noire. 
+          <ol>
+            <li>Donc on applique une couleur de base au jeu (Ici ce sera grise)</li>
+            <li>Puis on cible les cases qu'ont souhaitent coloré en noire avec nth-child() !</li>
+            <li>On va cibler les rangées paires et les colonnes paires, et les rangées impaires et les colonnes impaires</li>
+          </ol>
+        </li>
+        <li>
+          Pour cette question, on veut ajouter un paramètre booléen à la fonction makeSquare, si elle est True, alors la diagonale sera marron.
+          <ol>
+            <li>Pour le faire j'ai remarqué que le numéro de la case était égale au numéro de sa rangée, par exemple si on était dans la 3ème rangée, alors c'était la 3ème case qui était coloré en marron.</li>
+            <li>Donc on récupére toutes les rangées, puis on crée une boucle for où on va récupérer les cellules de chaque rangée, puis à chacun on va changer la couleur de la cellule, qui sera égale au numéro de la rangée, en marron.</li>
+          </ol>
+          Ainsi on obtient une diagonale coloré en marron.
+        </li>
+      </ol>
+  </section>
+  <section>
+      <h3>Exercice 3 : On fera en fonction…</h3>
+      <h3 style="font-size:1em">Attention, les fonctions demandés sont en commentaire dans le fichier exo3.html car en fonction des questions, les paramètres changent. On doit donc enlever les commentaires /* */ dans le fichier html en fonction de la question.</h3>
+      <ol>
+        <li>On crée le fichier exo3.html.</li>
+        <li>Pour cette question, on veut modifier la fonction makeCell afin que la couleur de sa cellule soit celle qu'on a renseigné en paramètre. Tout d'abord on ajoute le paramètre "color" dans la fonction, puis dans la fonction on ajoute la fonction "cell.style.backgroundColor = color" pour avoir notre couleur sur la cellule.</li>
+        <li>
+          Pour cette question, on veut créer une fonction fcol(i, j) avec comme paramètre :
+          <ol>
+            <li>i : Le numéro de la ligne </li>
+            <li>j : Le numéro de la colonne</li>
+          </ol>
+          <span>Donc fcol(0,0) va cibler la première case en haut à gauche.</span>
+          <span style="display:block">On a remarqué que dans le jeu la couleur de la case est mathématique:</span> 
+          <ol>
+            <li>Elle est de couleur noire lorsqu'on est sur une ligne paire et une colonne paire </li>
+            <li>Elle est de couleur blanche lorsqu'on est sur une ligne impair et une colonne paire</li>
+          </ol>
+          <span>Donc traduis mathématiquement cette condition en vérifiant si le numéro de la case était divisible par 2 ou pas, puis en fonction de la réponse, alors on peut appliquer la couleur qui lui est destiné.</span>
+        </li>
+        <li>
+          Pour cette question, on veut modifier la fonction makeSquare, pour qu'elle applique elle-même la couleur de la case grâce à la fonction qu'on a crée à la question précédente
+          <ol>
+            <li>Donc on applique la fonction fcol comme paramètre lorsqu'on appelle la fonction makeSquare.</li>
+            <li>Pour créer le Damier, on crée d'abord les cases du Damier en appellant <i>"size"</i> fois la fonction makeLine</li>
+            <li>On récupère toutes les lignes du Damier avec <i>table.querySelectorAll("tr");</i> puis on crée une double boucle for pour récupérer les coordonnées i et j de la case</li>
+          </ol>
+          Lorsqu'on a récupéré la coordonnée, on appelle la fonction fcol avec les paramètres i et j qu'on a.
+        </li>
+        <li>
+          Pour cette question, on veut modifier la fonction diagonalColor qui sera appelé par makeSquare en tant que paramètre:
+          <ol>
+            <li>La fonction makeSquare aura comme paramètre un booléen, si elle est True, alors on devra appliquer la diagonale du jeu en Marron, si elle est fausse alors on ne fait rien. Pour faire ceci on créer une fonction if avec comme paramètre le booléen.</li>
+            <li>Dans le cas où le paramètre est True, on va return la fonction qui va permettre de mettre la diagonale en marron, pour que le code sache quelle couleur doit être marron, on utilise les coordonnées de la case (i, j), si i == j alors cela veut dire qu'on est dans la diagonale et donc on applique la couleur marron.</li>
+          </ol>
+          Donc on va appeler la fonction makeSquare, avec diagonalColor comme paramètre, si diagonalColor est True, alors makeSquare va renvoyer la fonction fcol, qui sera la fonction qui va permettre de créer la diagonale en fonction des coordonnées de la case (i, j).
+          <p>(On garde la fonction de la question précédente qui crée le jeu de dame)</p>
+        </li>
+      </ol>
   </section>
 </body></html>

@@ -1,0 +1,20 @@
+body {
+    font-size:1.3em;
+    background-color: whitesmoke;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  h3,
+  h2{
+    text-align: center;
+    width: 100%;
+    text-decoration: underline;
+    font-size: 1.5em;
+  } 
+  section ol li{
+    margin: 1% 1% 1% 0;
+  }
+
+  section ol li ol{
+    list-style-type:disc;
+  }

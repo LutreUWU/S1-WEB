@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <!-- saved from url=(0086)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td04/exo1.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <title>Mon tout premier script</title>
   <script>
-   "use strict";
-   console.log("hello");
-  </script>
+    "use strict";
+    //console.log("hello");
+ 
+    // Question 2 
+    /*
+      for (let number = 0; number <= 2024 ; number++) {
+        console.log(number);
+      }
+    */
+    
+    // Question 3
+    /*
+      for (let number = 0; number <= 2023 ; number++) {
+        if (number % 2 == 0 || number % 3 == 0){
+           console.log(number);
+        }
+      }
+    */
+ 
+    // Question 4
+    function pair_and_divideBy3(number){
+      /** 
+      Cette fonction permet de donner, à partir d'un nombre donnée, tous les chiffres inférieurs à lui qui sont divisibles par 2 ou par 3
+      Paramètres:
+        - number : Le nombre qu'on veut
+      **/
+      for (let i = 0; i <= number ; i++) {
+        if (i % 2 == 0 || i % 3 == 0){
+          console.log(i);
+        }
+      }
+    };
+    pair_and_divideBy3(7);
+   </script>
  </head>
  <body>
   <h2>Premier pas en JavaScript</h2>
