@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td05/exo3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <title>Exercice 3</title>
+   <script>
+      "use strict";
+      const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, -8];
+      const random = n => Math.floor(n * Math.random());
+      
+      const show = function(id, fun) {
+        const minMax = fun(array);
+        const elt = document.getElementById(id);
+        elt.innerText = "min " + minMax[0] + " max " + minMax[1];
+      };
+      
+      window.onload = function() {
+        randomArray(array);
+        const line = document.getElementById('line');
+        line.innerHTML = array;
+        show("minmax-5",minmax5);
+      }      
+      const randomArray = function(array) {
+        /* 
+        Fonction pour la Q1, elle permet d'échanger la position de tous les éléments
+        dans le tableau.
+        - array : Le tableau
+        */
+        for (let i = 0; i < array.length; i++){
+          let random = Math.floor((array.length-1) * Math.random())
+          while (i == random){
+            random = Math.floor((array.length-1) * Math.random())
+          }
+          let firstValue = array[i]
+          array[i] = array[random]
+          array[random] = firstValue
+        }
+        return array
+      };
+      const minmax5 = function(array) {
+        /* 
+        Fonction pour la Q1, elle permet de déterminer le max et min du tableau, mais cette fois-ci
+        elle parcourt le tableau de 2 en 2.
+        - array : Le tableau
+        */
+        let array_minmax = [array[0], array[1]];
+        for (let i = 0; i < array.length; i += 2){
+          if (array[i] < array[i + 1]){
+            if (array[i] < array_minmax[0]){
+              array_minmax[0] = array[i];
+            } 
+            if (array[i + 1] > array_minmax[1]){
+              array_minmax[1] = array[i + 1];
+            } 
+          }
+
+          if (array[i] > array[i + 1]){
+            if (array[i + 1] < array_minmax[0]){
+              array_minmax[0] = array[i + 1];
+            } 
+            
+            if (array[i] > array_minmax[1]){
+              array_minmax[1] = array[i];
+            } 
+          }
+
+        }
+        return array_minmax
+      };
+   </script>
+ </head>
+ <body>
+  <h2>Random Array</h2>
+  <p id="line"></p>
+  <h2>Min/Max 5: Fury Road</h2>
+  <p id="minmax-5">
+ 
+
+</p></body></html>

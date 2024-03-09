@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+   <meta charset="utf-8">
+   <title>Exercice 2</title>
+   <script>
+      "use strict";
+      const array = [8, 2, 4, 0, 3, 9, 1, 5, 7, 6];
+      
+      const show = function(id, fun) {
+        const minMax = fun(array);
+        const elt = document.getElementById(id);
+        elt.innerText = "min " + minMax[0] + " max " + minMax[1];
+      };
+      
+      const showDico = function(id, fun) {
+        const minMax = fun(array);
+        const elt = document.getElementById(id);
+        elt.innerText = "min " + minMax.min + " max " + minMax.max;
+      };
+      
+      window.onload = function() {
+        // Q1
+        show("minmax-1",minmax);
+        // Q2
+        show("minmax-2",minmax2);
+        // Q3
+        show("minmax-3",minmax3);
+        // Q4
+        showDico("minmax-4",minmax4);
+      };
+   
+      const minmax = function(array) {
+        /* 
+        Fonction pour la Q2, on va créer un tableau [min, max], puis on récupére chaque élément de array
+        et on le compare avec le min et max
+        Elle prend comme paramètre:
+        - array : Le tableau
+        */
+        let array_minmax = [null, null];
+        array.forEach(element => {
+          if (array_minmax[0] == null || element < array_minmax[0]){
+            array_minmax[0] = element;
+          } 
+          if (array_minmax[1] == null || element > array_minmax[1]){
+            array_minmax[1] = element;
+          }   
+        })
+        return array_minmax;
+      };
+      
+      const minmax2 = function(array) {
+        /* 
+        Fonction pour la Q3, elle fait comme la Q2, mais on utilise le "spread" (...)
+        associé avec la fonction Math.min et Math.max
+        - array : Le tableau
+        */
+        let min = Math.min(...array)
+        let max = Math.max(...array)
+        return [min, max]
+      };
+      
+      const minmax3 = function(array) {
+        /* 
+        Fonction pour la Q4, elle fait comme la Q3, mais on utilise le "reduce"
+        avec les 2 premiers éléments du tableau comme valeur par défaut
+        - array : Le tableau
+        */
+
+        // Dans le cas où la longueur du tableau est inférieur où égale à 2
+        if (array.length <= 2){
+            if (array.length < 2){
+                return null;
+            }
+            return [array[0], array[1]];
+        }
+
+        const minMax = array.reduce((accumulateur, elementCourant) => {
+            if (accumulateur[0] > elementCourant){
+                accumulateur[0] = elementCourant;
+            }
+            if (accumulateur[1] < elementCourant){
+                accumulateur[1] = elementCourant;
+            }
+            return accumulateur
+        }, [array[0], array[1]]);
+        return minMax
+      };
+      
+      const minmax4 = function(array) {
+        /* 
+        Fonction pour la Q4, elle fait comme la Q3 mais avec des dictionnaires
+        - array : Le tableau
+        */
+        const minMax = array.reduce((accumulateur, elementCourant) => {
+            if (accumulateur["min"] > elementCourant){
+                accumulateur["min"] = elementCourant;
+            }
+            if (accumulateur["max"] < elementCourant){
+                accumulateur["max"] = elementCourant;
+            }
+            return accumulateur
+        }, { "min": 3, "max":7});
+        return minMax
+      };
+   </script>
+ </head>
+ <body>
+  <h2>Min/Max 1: The Junior One</h2>
+  <p id="minmax-1"></p>
+  <h2>Min/Max 2: Spread</h2>
+  <p id="minmax-2"></p>
+  <h2>Min/Max 3: The Road Warrior</h2>
+  <p id="minmax-3"></p>
+  <h2>Min/Max 4: Beyond Thunderdome</h2>
+  <p id="minmax-4"></p>
+ 
+
+</body></html>

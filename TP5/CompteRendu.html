@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td04/exo1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Mon tout premier script</title>
+  <link rel="stylesheet" href="./style.css">
+ </head>
+ 
+ 
+ 
+ 
+ <body>
+  <h2>Tableaux et filter, map, reduce</h2>
+  <section>
+    <h3>Exercice 1 : Tableaux</h3>
+    <ol>
+        <li>Le code récupère une valeur numérique, puis en fonction de cette valeur, elle va dessiner un graph qui tend vers le haut ou le bas.</li>
+        <li>Pour créer la fonction addThree, on crée un tableau vide, puis on utilise une boucle for pour ajouter +3 à chaque élément</li>
+        <li>On crée une fonction qui ajoute la valeur qu'on souhaite, puis on appelle cette en fonction en tant que paramètre</li>
+        <li>Au lieu de faire un for, on utilise le forEach(element, index) où index renvoie l'indice de l'élément et élément renvoie l'élement de l'indice</li>
+        <li>La méthode map crée un nouveau tableau avec les résultats  de l'appel d'une fonction fournie sur chaque élément du tableau appelant.</li>
+        <li>Pour trier les valeurs dans l'ordre croissant, on utilise la fonction sort(function(a,b){ return a-b;}) </li>
+        <li>Pour afficher que les nombres positives, on utilise filter pour crée un nouveau tableau avec que les valeurs positives</li>
+    </ol>
+  </section>
+  <section>
+    <h3>Exercice 2 : MinMax</h3>
+    <ol>
+        <li>La fonction minmax prend un tableau en paramètre, elle va ensuite créer un tableau vide [null, null], puis elle va parcourir chaque élément du tableau et si cette élément est inférieur au min ou supérieur au max, alors elle l'a remplace dans le tableau qu'on a crée</li>
+        <li>La méthode spread, consiste à créer une copie du tableau (Par exemple ...array créer une copie de array), on l'associe avec Math.min et Math.max et on obtient le min et max</li>
+        <li>La méthode reduce, consiste à parcourir le tableau qu'une seule fois, donc on lui applique comme paramètre, accumateur (La valeur accumulée jusqu'à présent, sa valeur par défaut est un tableau avec les 2 premières valeurs) et élementCourant (L'élément actuel). Puis on compare si le premier élément de accumulateur est supérieur à elementCourant, si c'est le cas alors, elementCourant devient le nouveau min et on le remplace, et on fait pareil pour le max</li>
+        <li>Similaire au dictionnaire Python, on fait comme la question 3 mais cette fois ci on fait des dictionnaires au lieu de tableau</li>
+    </ol>
+  </section>
+  <section>
+    <h3>Exercice 3 : Génération aléatoire et calcul rapide</h3>
+    <ol>
+        <li>La fonction randomArray prend un tableau en paramètre, elle va ensuite faire une boucle for qui parcoure tout le tableau, et pour chaque élément, elle prendre un nombre aléatoire entre 0 et la longueur du tableau (le nombre ne doit pas être égale à l'indice de l'élément), ensuite on échange leurs place dans le tableau</li>
+        <li>La fonction minmax5 prend un tableau comme paramètre, ensuite on crée un tableau vide qui contient les 2 premiers éléments du tableau, puis on fait une boucle for qui s'implémente de +2 au lieu du +1 habituel, ensuite on vérifie si l'élément est supérieur ou inférieur à son élément devant lui, et en fonction de la réponse on adapte le code.</li>
+    </ol>
+  </section>
+</body></html>
