@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td04/exo1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Mon tout premier script</title>
+  <link rel="stylesheet" href="./style.css">
+ </head>
+ 
+ 
+ 
+ 
+ <body>
+  <h2>Premier pas en JavaScript</h2>
+  <section>
+    <h3>Exercice 1 : Memory</h3>
+    <ol>
+        <li>Instruction</li>
+        <li>la fonction constructor, permet de créer une classe pour créer des cartes, elle prend en paramètre, un tableau d'images et une image qui servira de dos de carte</li>
+        <li>Pour stocker nos paramètres (array, blank) dans une classe, on utilise l'attribut "this" suivi du nom de notre variable, puis on l'attribue aux paramètres. Pour afficher le nombre d'image à l'intérieur de la div prise, on utilise "innerHtml = this.array.length"</li>
+        <li>ShuffleCards prend en paramètre le tableau d'image, puis elle va créer un nouveau tableau qui va créer des paires de chiffres allant de 0 jusqu'a la longueur du tableau d'images </li>
+        <li>Pour récupérer le tableau de ShuffleCards, on l'initie dans notre classe avec "this", ensuite pour créer une div contenant une image, on utilise l'attribut ".createElement("div"/"img)"</li>
+        <li>La différence est qu'on ne peut pas l'atteindre si on utilise pas la flèche, pour log l'index de la carte, on ajoute un évènement onclick pour chaque divIMG, et losqu'on clique sur l'une des cartes, alors elle renvoie arrayImage[ImageShuffle[i]]</li>
+        <li>On crée un nouveau tableau qui va permettre de conserver, [la balise img, son indice, et l'image correspondant] des 2 images retournés, puis losqu'on clique sur une carte, alors notre nouvelle variable va récupérer les informations donné.</li>
+        <li>Lorsqu'on clique sur une image, on vérifier plusieurs choses:
+          <ol style="list-style-type:circle; font-size: 1em;">
+            <li>Si on a cliqué sur la 1er image : Alors on va la mettre dans le tableau qu'on a crée précédemment</li>
+            <li>Si on a cliqué sur la même image / Une image déja retourné: Alors rien ne se passe</li>
+            <li>Si on a cliqué sur une autre image : Alors on la retourne et on regarde si les 2 images sont les mêmes</li>
+          </ol>
+          Lorsqu'on vérifie les 2 images, on regarde juste si le src est la même, si c'est le cas alors le code laisse les images retournées et vide le tableau qui contient les images retournés. Sinon dans le cas inverse, elle retourne les 2 images puis il réinitialise le tableau.
+        </li>
+        <li>Pour cela on va utiliser setTimeout(() => {}, 500) sur la fonction qui vérifie si les 2 cartes sont les mêmes, on va laisser 500ms avant de vider le tableau</li>
+        <li>Pour mélanger les cartes on fait comme la Q1 de l'exercice 3 du TP5, sauf que cette fois-ci on va créer 2 valeurs math.random</li>
+      </ol>
+  </section>
+</body>
+</html>
