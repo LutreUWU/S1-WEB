@@ -1,12 +1,11 @@
 ## Site qui répertorie tous mes TP de Programmation WEB durant ma L1 de Math Info
-Dernière Update: 16/03/24 (Ajout du TP6) (Le screen n'est pas à jour)
+Dernière Update: 23/03/24 (Ajout du TP7) (Le screen n'est pas à jour car flemme)
 ![Capture d'écran 2024-02-15 225027](https://github.com/LutreUWU/S1-WEB/assets/126251020/b644e351-6eed-4d4a-914a-1389f29c28a5)
 
 
 # Quelques remarques :
 + Je mettrai le git à jour jusqu'à que ma L1 soit finit
-+ (Pour l'université) Je vais rendre tous mes TP sur ce git là
-+ Si vous rencontrez un problème ou si vous avez des questions, contactez moi par mail (davidliv6@gmail.om) ou sur Discord (davideuh)
++ Si vous rencontrez un problème ou si vous avez des questions, contactez moi par mail (davidliv6@gmail.com) ou sur Discord (davideuh)
  
 
 
