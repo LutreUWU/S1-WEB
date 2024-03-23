@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td04/exo1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>	
+    Dessiner sur des Canvas
+    </title>
+  <link rel="stylesheet" href="./style.css">
+ </head>
+ 
+ 
+ 
+ 
+ <body>
+  <h2>	
+    Dessiner sur des Canvas
+    </h2>
+  <section>
+    <h3>Exercice 1 : On s'arrête et on réfléchit </h3>
+    <ol>
+        <li>Juste un message pour nous rappeler qu'il faut finir les TP précédents.</li>
+      </ol>
+  </section>
+  <section>
+    <h3>Exercice 2 : Horloge</h3>
+    <ol>
+        <li>Lorsqu'on visualise la pageweb, seul un titre s'affiche "Horloge", si on regarde de plus près dans la console, la console nous renvoie un "tick" ! </li>
+        <li>La fonction refresh renvoie un "tick" toutes les secondes, pour le faire on fait une récursive avec cette fonction toutes les 1000 ms</li>
+        <li>On appelle la fonction avec window.setTimeout(refresh, 1000), on oublie pas de préciser l'intervalle qui est de 1000ms</li>
+        <li>Pour afficher la date et l'heure au lieu de "ticks" on va créer un objet Date avec la commande "new Date()", puis grâce à cet objet on pourra récupérer la date et l'heure avec "getDate()" et "getHours".</li>
+        <li>Même chose que la question précédente mais on utilise "getMinutes()" et "getSeconds".</li>
+        <li>La fonction drawOnCanvas desssine un trait commençant à (0, 300) et se terminant à (600, 300) </li>
+        <li>On sait que la première donnée représente le x et la deuxième représente le y, donc pour faire une aiguille qui pointe vers midi, on doit faire un trait vertical, donc pour se faire on va juste modifier la coordonnée y. (300, 300) -> (300, 100).</li>
+        <li>Pour afficher un cercle on utilise "context.arc(300, 300, 220, 0, 2*Math.pi)", les 2 premières coordonnées représentent le centre x y, la 3ème, son rayon en px, et les 2 dernières représentent l'angle de départ et l'angle d'arrivé (Pour faire un cercle complé on va de 0 à pi/2)</li>
+        <li>Pour trouver la coordonnée x et y du sommei de l'aiguille, on va utiliser la trigonométrie ! On ne va pas rentrer dans les détails car ce n'est pas le but, mais c'est ce qu'on va utiliser pour trouver l'hypoténus qui est égale à l'aiguille (Grâce au formule CAH SOH TOI)</li>
+        <li>On va utiliser window.setInterval() qui va nous permettre de répéter la récupération de la Date ainsi que la création de l'aiguille en fonction de la Date.</li>
+      </ol>
+  </section>
+  <section>
+    <h3>Exercice 3 : Horloge plus raffinée (optionnel)</h3>
+    <ol>
+        <li>On utilise simplement ".lineWidth" et ".strokeStyle" </li>
+        <li>Pour afficher l'aiguille des minutes on fait la même fonction mais cette fois-ci on va diviser notre cercle de degrès 2PI, en 60 valeurs (Donc on fait 2PI/60).</li>
+        <li>Pour faire cela on va créer un tableau, et on va faire une boucle for qui va permettre de créer l'aiguille en fonction du rayon du cercle, plus on se rapproche des secondes, plus le rayon du cercle sera grand.</li>
+        <li>Pour ajouter des traits de graduations, on va calculer récupérer les coordonnées qu'on a utilisé pour nos calculs, et au lieu que ce soit notre point d'arrivé, ce sera notre point de départ ! Et pour trouver le point d'arriver, il suffit de recalculer maiss avec un rayon de cercle légèrement plus petit !</li> 
+      </ol>
+  </section>
+  <section>
+    <h3>Exercice 4 : Horloges de différentes tailles (optionnel)</h3>
+    <ol>
+        <li>Je ne l'ai pas faite, mais selon moi l'idée est de récupérer la width et la height du canvas et avec ça ressortir un rayon du cercle adapté au Canvas</li> 
+      </ol>
+  </section>
+</body>
+</html>
